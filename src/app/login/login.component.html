@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h1>Login</h1>
+    <input type="email" formControlName="email" placeholder="Email" ngModel [email]="true" required><br>
+    <input type="password" formControlName="password" placeholder="Password" required><br>
+    <button type="submit" (click)="onSubmit()">Login</button>
+</form> -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="center">
-        <h1>Login</h1>
-        <div class="fields">
-            <input type="text" placeholder="Username" required><br>
-            <input type="password" placeholder="Password" required><br>
-        </div>
-        <div>
-            <!-- <input type="submit" value="Login"> -->
-            <button (click)="onLogin()">Login</button>
-        </div>
-
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h1>Login</h1>
+    <input type="email" formControlName="email" placeholder="Email" required>
+    <div
+        *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+        <span style="color:red;">Invalid email</span>
     </div>
-</body>
-
-</html>
+    <br>
+    <input type="password" formControlName="password" placeholder="Password" required>
+    <div
+        *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+        <span style="color:red;">Invalid password</span>
+    </div>
+    <br>
+    <button type="submit" (click)="onSubmit()" [disabled]="loginForm.invalid">Login</button>
+</form>

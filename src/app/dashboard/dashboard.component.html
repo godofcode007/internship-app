@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="side" opened="">
+      <div class="item-list">
+        <nav>
+          <a mat-list-item routerLink="/artist" routerLinkActive="active">Artist</a>
+          <a mat-list-item routerLink="/band" routerLinkActive="active">Band</a>
+          <a mat-list-item routerLink="/concert" routerLinkActive="active">Concert</a>
+          <a mat-list-item routerLink="/concert-band" routerLinkActive="active">Concert Band</a>
+          <a mat-list-item routerLink="/instrument" routerLinkActive="active">Instrument</a>
+          <a mat-list-item routerLink="/role" routerLinkActive="active">Role</a>
+          <a mat-list-item routerLink="/roleinstrument" routerLinkActive="active">Role Instrument</a>
+          <a mat-list-item routerLink="/Venue" routerLinkActive="active">Venue</a>
+        </nav>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <button (click)="sidenav.toggle()" class="arrow">
+        <i class="fa-solid fa-arrows-left-right fa-beat fa-xl"></i>
+      </button>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
+
+</body>
+
+</html>

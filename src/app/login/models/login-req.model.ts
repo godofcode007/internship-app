@@ -1,4 +1,4 @@
 export class LoginReqModel {
-    email!: string;
-    password!: string;
+  email!: string | boolean;
+  password!: string;
 }

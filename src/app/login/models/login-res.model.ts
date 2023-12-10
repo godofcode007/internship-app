@@ -1,3 +1,4 @@
 export class LoginResModel {
-    token!: string;
+  token!: string;
+  success!: boolean;
 }
